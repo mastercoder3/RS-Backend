@@ -1,9 +1,6 @@
 import { Service, Inject } from 'typedi';
-import config from '../config';
 import { IFavorite, IFavoriteUserInput, IFavoriteExistInput } from '../interfaces/IFavorite';
 import mongoose, { Document, Model } from 'mongoose'
-import { ObjectId } from 'mongodb';
-
 
 @Service()
 export default class FavoriteService {

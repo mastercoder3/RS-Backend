@@ -1,8 +1,6 @@
 import { Service, Inject } from 'typedi';
-import config from '../config';
 import { ILocation, ILocationInput, ILocationSearchInput } from '../interfaces/ILocation';
-import mongoose, { Document, Model } from 'mongoose'
-
+import { Document, Model } from 'mongoose'
 
 @Service()
 export default class LocationService {

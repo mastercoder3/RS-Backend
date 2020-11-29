@@ -13,7 +13,7 @@ export default (app: Router) =>{
 
     const favoriteServiceInstance = Container.get(FavoriteService);
 
-    route.post('/all', middlewares.isAuth,
+    route.post('/all', middlewares.isAuth, middlewares.attachCurrentUser,
     celebrate({ 
         body:Joi.object({
             userId: Joi.string().required()
