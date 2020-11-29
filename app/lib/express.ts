@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import routes from '../api';
+import config from '../config';
 
 export default ({ app }: { app: express.Application }) => {
 
@@ -18,10 +20,11 @@ export default ({ app }: { app: express.Application }) => {
 
     // Setups for express
 
-    app.enable('tust proxy');
+    app.enable('trust proxy');
     app.use(cors());
     app.use(bodyParser.json());
-
+    app.use(require('method-override')());
+    app.use(config.api.prefix, routes());
 
     // Hangling Errors
     app.use((req, res, next) => {
